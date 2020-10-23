@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/json-schema-tools/titleizer/compare/1.0.2...1.0.3) (2020-10-23)
+
+
+### Bug Fixes
+
+* oc name ([677e3dd](https://github.com/json-schema-tools/titleizer/commit/677e3dde49561b14643b87505af160a8a51b0660))
+
 ## [1.0.2](https://github.com/json-schema-tools/titleizer/compare/1.0.1...1.0.2) (2020-10-23)
 
 
