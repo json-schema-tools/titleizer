@@ -1,3 +1,14 @@
+## [1.0.1](https://github.com/json-schema-tools/titleizer/compare/1.0.0...1.0.1) (2020-10-23)
+
+
+### Bug Fixes
+
+* add contributing docs ([4a00e6e](https://github.com/json-schema-tools/titleizer/commit/4a00e6ee051e6d2d18fbb1098d7c1c3d944460f9))
+* add eslint dep ([996d6b2](https://github.com/json-schema-tools/titleizer/commit/996d6b2f54517c7ed354850c689ef07c298eb494))
+* add lint step ([fd3093f](https://github.com/json-schema-tools/titleizer/commit/fd3093f9ea79824e23fb6b62b5237f726a19a89f))
+* add readme ([c8e0428](https://github.com/json-schema-tools/titleizer/commit/c8e04287a1d3e6ce6f9a858c8d6142569704ad88))
+* change some rules for tests ([62a3794](https://github.com/json-schema-tools/titleizer/commit/62a379496468c7933455ee551e226c36cb485a05))
+
 # 1.0.0 (2020-08-27)
 
 
