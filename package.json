@@ -9,7 +9,8 @@
     "build": "npm run build:code && typedoc --out docs && touch docs/.nojekyll",
     "build:code": "tsc",
     "test": "npm run test:unit",
-    "test:unit": "jest --coverage"
+    "test:unit": "jest --coverage",
+    "lint": "eslint . --ext .ts"
   },
   "author": "BelfordZ <belfordz66@gmail.com>",
   "license": "Apache-2.0",
