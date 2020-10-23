@@ -64,6 +64,86 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
+				<a href="#json-schema-titleizer" id="json-schema-titleizer" style="color: inherit; text-decoration: none;">
+					<h1>JSON Schema Titleizer</h1>
+				</a>
+				<center>
+					<span>
+						<img alt="CircleCI branch" src="https://img.shields.io/circleci/project/github/json-schema-tools/titleizer/master.svg">
+						<img src="https://codecov.io/gh/json-schema-tools/titleizer/branch/master/graph/badge.svg" />
+						<img alt="Dependabot status" src="https://api.dependabot.com/badges/status?host=github&repo=json-schema-tools/titleizer" />
+						<img alt="npm" src="https://img.shields.io/npm/dt/@json-schema-tools/titleizer.svg" />
+						<img alt="GitHub release" src="https://img.shields.io/github/release/json-schema-tools/titleizer.svg" />
+						<img alt="GitHub commits since latest release" src="https://img.shields.io/github/commits-since/json-schema-tools/titleizer/latest.svg" />
+					</span>
+				</center>
+				<p>A tool to ensure that a schema and all its subschemas have a title. If there is no title present, one will be deterministically generated based on the schemas contents.</p>
+				<a href="#features" id="features" style="color: inherit; text-decoration: none;">
+					<h2>Features</h2>
+				</a>
+				<ul>
+					<li>circular reference detection &amp; handling</li>
+					<li>synchronous - doesn&#39;t touch the filesystem or make network requests. (use @json-schema-tools/dereferencer first if you have references)</li>
+					<li>generate subschema-dependent titles</li>
+				</ul>
+				<a href="#getting-started" id="getting-started" style="color: inherit; text-decoration: none;">
+					<h2>Getting Started</h2>
+				</a>
+				<pre><code class="language-sh">npm install @json-schema-tools/titleizer</code></pre>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> titleizer = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;@json-schema-tools/titleizer&quot;</span>).default;
+<span class="hljs-comment">//import titleizer from &quot;@json-schema-tools/titleizer&quot;</span>
+
+<span class="hljs-keyword">const</span> mySchema = {
+  <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;object&quot;</span>,
+  <span class="hljs-attr">properties</span>: {
+    <span class="hljs-attr">foo</span>: {
+      <span class="hljs-attr">title</span>: <span class="hljs-string">&quot;foo&quot;</span>,
+      <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;array&quot;</span>,
+      <span class="hljs-attr">items</span>: { <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;string&quot;</span> }
+    },
+    <span class="hljs-attr">bar</span>: {
+      <span class="hljs-attr">title</span>: <span class="hljs-string">&quot;bar&quot;</span>,
+      <span class="hljs-attr">anyOf</span>: [
+        { <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;string&quot;</span> },
+        { <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;number&quot;</span> }
+      ]
+    }
+  }
+};
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">JSON</span>.stringify(titleizer(mySchema), <span class="hljs-literal">undefined</span>, <span class="hljs-string">&quot;  &quot;</span>));</code></pre>
+				<p>Output from running the above:</p>
+				<pre><code>{
+  <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+  <span class="hljs-attr">&quot;properties&quot;</span>: {
+    <span class="hljs-attr">&quot;foo&quot;</span>: {
+      <span class="hljs-attr">&quot;title&quot;</span>: <span class="hljs-string">&quot;foo&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;array&quot;</span>,
+      <span class="hljs-attr">&quot;items&quot;</span>: {
+        <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;title&quot;</span>: <span class="hljs-string">&quot;string_doaGddGA&quot;</span>
+      }
+    },
+    <span class="hljs-attr">&quot;bar&quot;</span>: {
+      <span class="hljs-attr">&quot;title&quot;</span>: <span class="hljs-string">&quot;bar&quot;</span>,
+      <span class="hljs-attr">&quot;anyOf&quot;</span>: [
+        {
+          <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;title&quot;</span>: <span class="hljs-string">&quot;string_doaGddGA&quot;</span>
+        },
+        {
+          <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;number&quot;</span>,
+          <span class="hljs-attr">&quot;title&quot;</span>: <span class="hljs-string">&quot;number_Ho1clIqD&quot;</span>
+        }
+      ]
+    }
+  },
+  <span class="hljs-attr">&quot;title&quot;</span>: <span class="hljs-string">&quot;objectOf_foo_bar_Bd1o3wyq&quot;</span>
+}</code></pre>
+				<a href="#contributing" id="contributing" style="color: inherit; text-decoration: none;">
+					<h3>Contributing</h3>
+				</a>
+				<p>How to contribute, build and release are outlined in <a href="CONTRIBUTING.md">CONTRIBUTING.md</a>, <a href="BUILDING.md">BUILDING.md</a> and <a href="RELEASING.md">RELEASING.md</a> respectively. Commits in this repository follow the <a href="CONVENTIONAL_COMMITS.md">CONVENTIONAL_COMMITS.md</a> specification.</p>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
