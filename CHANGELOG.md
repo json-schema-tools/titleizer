@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/json-schema-tools/titleizer/compare/1.0.1...1.0.2) (2020-10-23)
+
+
+### Bug Fixes
+
+* add funding ([157d743](https://github.com/json-schema-tools/titleizer/commit/157d743ae2a7f4b8f41f14b018cb1bed86645ec2))
+
 ## [1.0.1](https://github.com/json-schema-tools/titleizer/compare/1.0.0...1.0.1) (2020-10-23)
 
 
