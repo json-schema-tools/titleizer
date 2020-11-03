@@ -18,6 +18,7 @@ A tool to ensure that a schema and all its subschemas have a title. If there is 
  - circular reference detection & handling
  - synchronous - doesn't touch the filesystem or make network requests. (use @json-schema-tools/dereferencer first if you have references)
  - generate subschema-dependent titles
+ - always have unique titles for your json-schema
 
 ## Getting Started
 
