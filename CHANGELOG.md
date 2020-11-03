@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/json-schema-tools/titleizer/compare/1.0.3...1.0.4) (2020-11-03)
+
+
+### Bug Fixes
+
+* update docs ([a2cba8d](https://github.com/json-schema-tools/titleizer/commit/a2cba8d3017ec5f7b08b24e90d8484e6c80897be))
+
 ## [1.0.3](https://github.com/json-schema-tools/titleizer/compare/1.0.2...1.0.3) (2020-10-23)
 
 
