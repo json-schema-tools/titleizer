@@ -1,3 +1,12 @@
+## [1.0.5](https://github.com/json-schema-tools/titleizer/compare/1.0.4...1.0.5) (2021-06-08)
+
+
+### Bug Fixes
+
+* add typedoc config ([e0ede2b](https://github.com/json-schema-tools/titleizer/commit/e0ede2b397f6995986699843e2c83c7f00b61333))
+* eslint gh action broke ([b38464c](https://github.com/json-schema-tools/titleizer/commit/b38464cb732ce995a256b1c00b53b74fee61efb6))
+* update deps ([1cfb9f4](https://github.com/json-schema-tools/titleizer/commit/1cfb9f4116deec0786e73b45dc549840482141f3))
+
 ## [1.0.4](https://github.com/json-schema-tools/titleizer/compare/1.0.3...1.0.4) (2020-11-03)
 
 
