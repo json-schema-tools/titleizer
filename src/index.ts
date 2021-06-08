@@ -126,7 +126,7 @@ export function getDefaultTitleForSchema(schema: JSONSchema, isRootCycle = false
  * @category SchemaImprover
  *
  */
-export default (s: JSONSchema): JSONSchema => {
+export default function titleizer(s: JSONSchema): JSONSchema {
   traverse(
     s,
     getDefaultTitleForSchema,
@@ -134,4 +134,4 @@ export default (s: JSONSchema): JSONSchema => {
   );
 
   return s;
-};
+}
