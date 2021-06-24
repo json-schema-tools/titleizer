@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/json-schema-tools/titleizer/compare/1.0.5...1.0.6) (2021-06-24)
+
+
+### Bug Fixes
+
+* update to new meta schema ([7bb42fe](https://github.com/json-schema-tools/titleizer/commit/7bb42fea98f6f7b40c54b6247f49b2b71a7b9312))
+
 ## [1.0.5](https://github.com/json-schema-tools/titleizer/compare/1.0.4...1.0.5) (2021-06-08)
 
 
