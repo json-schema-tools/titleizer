@@ -21,7 +21,7 @@ describe("titleizer", () => {
           ],
         },
       },
-    };
+    } as JSONSchema;
 
     const titledSchema = titleizer(testSchema) as JSONSchemaObject;
     expect(titledSchema).toHaveProperty("title");
@@ -51,7 +51,7 @@ describe("titleizer", () => {
 
     testSchema.properties.bar.anyOf.push(testSchema.properties.foo);
 
-    const titledSchema = titleizer(testSchema) as JSONSchemaObject;
+    const titledSchema = titleizer(testSchema as JSONSchema) as JSONSchemaObject;
     const props = (titledSchema.properties as Properties);
 
     expect(props.foo.title).toBe("string_doaGddGA");
@@ -74,7 +74,7 @@ describe("titleizer", () => {
 
     testSchema.properties.bar.oneOf.push(testSchema.properties.bar);
 
-    const titledSchema = titleizer(testSchema) as JSONSchemaObject;
+    const titledSchema = titleizer(testSchema as JSONSchema) as JSONSchemaObject;
     const props = (titledSchema.properties as Properties);
 
     expect(titledSchema).toHaveProperty("title");
@@ -99,7 +99,7 @@ describe("titleizer", () => {
 
     testSchema.properties.bar.anyOf[1].items = testSchema.properties.bar.anyOf[0];
 
-    const titledSchema = titleizer(testSchema) as JSONSchemaObject;
+    const titledSchema = titleizer(testSchema as JSONSchema) as JSONSchemaObject;
     const props = (titledSchema.properties as Properties);
 
     expect(titledSchema).toHaveProperty("title");
@@ -144,7 +144,7 @@ describe("titleizer", () => {
 
     testSchema.properties.foo.anyOf.push(testSchema);
 
-    const titledSchema = titleizer(testSchema) as JSONSchemaObject;
+    const titledSchema = titleizer(testSchema as JSONSchema) as JSONSchemaObject;
 
     expect(titledSchema).toHaveProperty("title");
 
@@ -180,8 +180,8 @@ describe("titleizer", () => {
         const a = { title: "a" };
         const b = { title: "b" };
 
-        const t1 = { type: "array", items: [{ ...a }, { ...b }] };
-        const t2 = { type: "array", items: [{ ...b }, { ...a }] };
+        const t1 = { type: "array", items: [{ ...a }, { ...b }] } as JSONSchema;
+        const t2 = { type: "array", items: [{ ...b }, { ...a }] } as JSONSchema;
 
         expect(getDefaultTitleForSchema(t1))
           .not
@@ -207,8 +207,8 @@ describe("titleizer", () => {
         const a = { title: "foo" };
         const b = { title: "bar" };
 
-        const t1 = { type: "object", properties: { a, b } };
-        const t2 = { type: "object", properties: { b, a } };
+        const t1 = { type: "object", properties: { a, b } } as JSONSchema;
+        const t2 = { type: "object", properties: { b, a } } as JSONSchema;
 
         expect((getDefaultTitleForSchema(t1) as JSONSchemaObject).title)
           .toEqual((getDefaultTitleForSchema(t2) as JSONSchemaObject).title);
@@ -218,24 +218,24 @@ describe("titleizer", () => {
         const a = { type: "integer", title: "foo" };
         const b = { title: "foo", type: "integer" };
 
-        const t1 = { type: "array", items: a };
-        const t2 = { type: "array", items: b };
+        const t1 = { type: "array", items: a } as JSONSchema;
+        const t2 = { type: "array", items: b } as JSONSchema;
 
         expect((getDefaultTitleForSchema(t1) as JSONSchemaObject))
           .toEqual((getDefaultTitleForSchema(t2) as JSONSchemaObject));
       });
 
       it("order of enum values doesnt matter", () => {
-        const a = { type: "number", enum: [1, 2, 3] };
-        const b = { type: "number", enum: [3, 2, 1] };
+        const a = { type: "number", enum: [1, 2, 3] } as JSONSchema;
+        const b = { type: "number", enum: [3, 2, 1] } as JSONSchema;
 
         expect((getDefaultTitleForSchema(a) as JSONSchemaObject).title)
           .toEqual((getDefaultTitleForSchema(b) as JSONSchemaObject).title);
       });
 
       it("definitions are ignored", () => {
-        const a = { type: "number", definitions: { a: { type: "number" } } };
-        const b = { type: "number", definitions: { b: { type: "string" } } };
+        const a = { type: "number", definitions: { a: { type: "number" } } } as JSONSchema;
+        const b = { type: "number", definitions: { b: { type: "string" } } } as JSONSchema;
 
         expect((getDefaultTitleForSchema(a) as JSONSchemaObject).title)
           .toEqual((getDefaultTitleForSchema(b) as JSONSchemaObject).title);
