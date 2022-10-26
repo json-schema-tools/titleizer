@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/json-schema-tools/titleizer/compare/1.0.6...1.0.7) (2022-10-26)
+
+
+### Bug Fixes
+
+* bump ci node version ([81af93b](https://github.com/json-schema-tools/titleizer/commit/81af93bc16f43ff3ce1b86ff76210c95334e38dc))
+
 ## [1.0.6](https://github.com/json-schema-tools/titleizer/compare/1.0.5...1.0.6) (2021-06-24)
 
 
