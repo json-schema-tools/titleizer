@@ -1,3 +1,12 @@
+## [1.0.8](https://github.com/json-schema-tools/titleizer/compare/1.0.7...1.0.8) (2022-10-28)
+
+
+### Bug Fixes
+
+* bump typescript and typedoc ([37429b0](https://github.com/json-schema-tools/titleizer/commit/37429b0dd30e715b47d6a4f10d13d3b721142254))
+* typedoc broken ([15c6d00](https://github.com/json-schema-tools/titleizer/commit/15c6d006b68234e94e81e8775ba206ad48aac80d))
+* update typedoc eslint and node typings ([f0f3c3a](https://github.com/json-schema-tools/titleizer/commit/f0f3c3a71579c3f35c2d86734353ce6c949c4b66))
+
 ## [1.0.7](https://github.com/json-schema-tools/titleizer/compare/1.0.6...1.0.7) (2022-10-26)
 
 
