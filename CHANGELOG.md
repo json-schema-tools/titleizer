@@ -1,3 +1,10 @@
+## [1.0.9](https://github.com/json-schema-tools/titleizer/compare/1.0.8...1.0.9) (2024-05-07)
+
+
+### Bug Fixes
+
+* bump deps ([ac7b43a](https://github.com/json-schema-tools/titleizer/commit/ac7b43aeb7d3431118f9bbdff16f0edb122c767b))
+
 ## [1.0.8](https://github.com/json-schema-tools/titleizer/compare/1.0.7...1.0.8) (2022-10-28)
 
 
