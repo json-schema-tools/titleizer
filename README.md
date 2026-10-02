@@ -3,7 +3,6 @@
 <center>
   <span>
     <img alt="CircleCI branch" src="https://img.shields.io/circleci/project/github/json-schema-tools/titleizer/master.svg">
-    <img src="https://codecov.io/gh/json-schema-tools/titleizer/branch/master/graph/badge.svg" />
     <img alt="Dependabot status" src="https://api.dependabot.com/badges/status?host=github&repo=json-schema-tools/titleizer" />
     <img alt="npm" src="https://img.shields.io/npm/dt/@json-schema-tools/titleizer.svg" />
     <img alt="GitHub release" src="https://img.shields.io/github/release/json-schema-tools/titleizer.svg" />
