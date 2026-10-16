@@ -214,6 +214,14 @@ describe("titleizer", () => {
           .toEqual((getDefaultTitleForSchema(t2) as JSONSchemaObject).title);
       });
 
+      it("boolean property subschemas", () => {
+        const t1 = { type: "object", properties: { a: true, b: false } } as JSONSchema;
+        const t2 = { type: "object", properties: { b: false, a: true } } as JSONSchema;
+
+        expect((getDefaultTitleForSchema(t1) as JSONSchemaObject).title)
+          .toEqual((getDefaultTitleForSchema(t2) as JSONSchemaObject).title);
+      });
+
       it("when array items is an object (single schema), property ordering does not matter", () => {
         const a = { type: "integer", title: "foo" };
         const b = { title: "foo", type: "integer" };
