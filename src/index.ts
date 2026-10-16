@@ -2,8 +2,7 @@ import { JSONSchema, JSONSchemaObject } from "@json-schema-tools/meta-schema";
 import traverse from "@json-schema-tools/traverse";
 import { createHash } from "crypto";
 
-type SchemEntry = [string, JSONSchema];
-export const sortEntriesByKey = ([key1]: SchemEntry, [key2]: SchemEntry) => key1 > key2 ? -1 : 1;
+export const sortEntriesByKey = ([key1]: [string, JSONSchema], [key2]: [string, JSONSchema]) => key1 > key2 ? -1 : 1;
 const hashRegex = new RegExp("[^A-z | 0-9]+", "g");
 
 /**
@@ -42,10 +41,10 @@ export function getDefaultTitleForSchema(schema: JSONSchema, isRootCycle = false
   if (schema.type === "object" && schema.properties) {
     const sProps: { [k: string]: JSONSchema } = schema.properties;
     deterministicSchema.properties = Object.entries(sProps).sort(sortEntriesByKey);
-    const joinedTitles = deterministicSchema.properties.map((val: any) => {
-      if (isRootCycle && val[1] === schema) { return "self"; }
+    const joinedTitles = deterministicSchema.properties.map(([, val]: [string, JSONSchema]) => {
+      if (isRootCycle && val === schema) { return "self"; }
 
-      return val[1].title;
+      return typeof val === "object" ? val.title : undefined;
     }).join("_");
 
     prefix = `objectOf_${joinedTitles}_`;
@@ -90,7 +89,7 @@ export function getDefaultTitleForSchema(schema: JSONSchema, isRootCycle = false
   let asString;
   try {
     asString = JSON.stringify(asEntries);
-  } catch (e) {
+  } catch {
     // as of recent updates, this should no longer ever be hit.
     // cycles have their titles resolved above.
     asString = JSON.stringify(asEntries, (key, value) => {
