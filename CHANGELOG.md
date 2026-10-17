@@ -5,6 +5,13 @@
 
 * bump deps ([ac7b43a](https://github.com/json-schema-tools/titleizer/commit/ac7b43aeb7d3431118f9bbdff16f0edb122c767b))
 
+## [1.0.10](https://github.com/json-schema-tools/titleizer/compare/1.0.9...1.0.10) (2026-10-17)
+
+
+### Bug Fixes
+
+* inline synchronous sha1, drop node crypto import ([#643](https://github.com/json-schema-tools/titleizer/issues/643)) ([#645](https://github.com/json-schema-tools/titleizer/issues/645)) ([21b40e5](https://github.com/json-schema-tools/titleizer/commit/21b40e51fc8c816300d2e9a053e50ed2400812f5))
+
 ## [1.0.8](https://github.com/json-schema-tools/titleizer/compare/1.0.7...1.0.8) (2022-10-28)
 
 
