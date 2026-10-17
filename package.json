@@ -40,7 +40,7 @@
     "typescript": "^5.7.3"
   },
   "dependencies": {
-    "@json-schema-tools/traverse": "^1.10.4"
+    "@json-schema-tools/traverse": "^1.15.1"
   },
   "homepage": "https://github.com/json-schema-tools/titleizer#readme",
   "description": "Generate deterministic titles for json schemas (AKA ensureAllSchemasHaveTitles)"
