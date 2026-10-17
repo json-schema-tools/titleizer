@@ -1,6 +1,6 @@
 import { JSONSchema, JSONSchemaObject } from "@json-schema-tools/meta-schema";
 import traverse from "@json-schema-tools/traverse";
-import { createHash } from "crypto";
+import { sha1Base64 } from "./sha1";
 
 export const sortEntriesByKey = ([key1]: [string, JSONSchema], [key2]: [string, JSONSchema]) => key1 > key2 ? -1 : 1;
 const hashRegex = new RegExp("[^A-z | 0-9]+", "g");
@@ -104,7 +104,7 @@ export function getDefaultTitleForSchema(schema: JSONSchema, isRootCycle = false
     });
   }
 
-  const hash = createHash("sha1").update(asString).digest("base64");
+  const hash = sha1Base64(asString);
   const friendlyHash = hash.replace(hashRegex, "").slice(0, 8);
 
   schema.title = `${prefix}${friendlyHash}`;
